@@ -1,0 +1,64 @@
+@import "tailwindcss";
+
+/* Brand values are injected per school from src/config (see themeVariables). */
+:root {
+  --brand: #1f4e79;
+  --brand-contrast: #ffffff;
+  --accent: #c8761d;
+  --surface: #f7f5f0;
+  --radius: 0.625rem;
+  --ink: #1c2430;
+  --muted: #5b6573;
+  --line: #e2e5ea;
+}
+
+@theme inline {
+  --color-brand: var(--brand);
+  --color-brand-contrast: var(--brand-contrast);
+  --color-brand-soft: color-mix(in oklab, var(--brand) 9%, white);
+  --color-brand-strong: color-mix(in oklab, var(--brand) 82%, black);
+  --color-accent: var(--accent);
+  --color-accent-soft: color-mix(in oklab, var(--accent) 12%, white);
+  --color-accent-strong: color-mix(in oklab, var(--accent) 75%, black);
+  --color-surface: var(--surface);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --radius-brand: var(--radius);
+  --font-sans: var(--font-body), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-heading), ui-serif, Georgia, serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #ffffff;
+  color: var(--ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+:focus-visible {
+  outline: 3px solid color-mix(in oklab, var(--brand) 55%, white);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}
+
+@media print {
+  .no-print {
+    display: none !important;
+  }
+}

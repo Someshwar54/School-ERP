@@ -1,0 +1,28 @@
+[project]
+name = "school-erp-backend"
+version = "0.1.0"
+requires-python = ">=3.12"
+
+[tool.ruff]
+line-length = 130
+target-version = "py312"
+extend-exclude = ["migrations/versions/0001_initial_schema.py"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP", "S", "SIM", "RUF"]
+ignore = ["S101", "S311", "B008", "RUF001", "RUF012", "S105", "S608", "E741"]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*" = ["S", "B", "E501"]
+"app/seed/*" = ["E501"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+
+[tool.mypy]
+python_version = "3.13"
+plugins = []
+ignore_missing_imports = true
+check_untyped_defs = true
+warn_unused_ignores = false
