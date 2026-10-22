@@ -1,0 +1,35 @@
+# Render Blueprint for the temporary hosted DEMO (fictional data, demo logins enabled).
+# Frontend is deployed separately on Vercel (root directory: frontend).
+databases:
+  - name: school-erp-db
+    plan: free
+    databaseName: school_erp
+    user: school_app
+
+services:
+  - type: web
+    name: school-erp-api
+    runtime: python
+    plan: free
+    rootDir: backend
+    buildCommand: pip install -r requirements.txt
+    startCommand: bash ../scripts/render_start.sh
+    healthCheckPath: /api/v1/health
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.13.1
+      - key: APP_ENV
+        value: development
+      - key: DATABASE_URL
+        fromDatabase:
+          name: school-erp-db
+          property: connectionString
+      - key: COOKIE_SECURE
+        value: "true"
+      - key: TENANT_FALLBACK_TO_DEFAULT
+        value: "true"
+      - key: DEMO_AUTH_MODE
+        value: "true"
+      # Set to your Vercel URL after the frontend is deployed, e.g. ["https://school-erp.vercel.app"]
+      - key: ALLOWED_ORIGINS
+        sync: false
