@@ -31,7 +31,7 @@ export function PortalEntryPage() {
   return (
     <PortalFrame>
       <div className="text-center">
-        <h1 className="font-display text-3xl font-semibold text-ink">Welcome to the {school.terminology.portal}</h1>
+        <h1 className="font-display text-3xl font-extrabold text-ink sm:text-4xl">Welcome to the {school.terminology.portal}</h1>
         <p className="mt-2 text-muted">Choose how you would like to sign in.</p>
       </div>
       <ul className="mt-10 grid gap-5 md:grid-cols-3">
@@ -40,14 +40,14 @@ export function PortalEntryPage() {
             <Link
               href={href}
               data-testid={testId}
-              className="group flex h-full flex-col rounded-brand border border-line bg-white p-6 shadow-sm transition hover:border-brand hover:shadow-md"
+              className="group flex h-full flex-col rounded-2xl border border-line bg-white p-7 shadow-sm transition hover:-translate-y-1 hover:border-brand hover:shadow-xl"
             >
-              <span className="inline-flex size-12 items-center justify-center rounded-brand bg-brand-soft text-brand">
+              <span className="inline-flex size-14 items-center justify-center rounded-full bg-brand text-brand-contrast shadow-md">
                 <Icon className="size-6" aria-hidden />
               </span>
-              <span className="mt-4 text-lg font-semibold text-ink">{title}</span>
+              <span className="mt-5 text-xl font-bold text-ink">{title}</span>
               <span className="mt-1 flex-1 text-sm leading-relaxed text-muted">{text}</span>
-              <span className="mt-5 inline-flex items-center gap-1 text-sm font-medium text-brand">
+              <span className="mt-6 inline-flex items-center gap-1 text-sm font-bold text-brand">
                 Continue <ChevronRight className="size-4 transition group-hover:translate-x-0.5" aria-hidden />
               </span>
             </Link>

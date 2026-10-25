@@ -19,11 +19,11 @@ export function LoginPage({
 }) {
   return (
     <PortalFrame back={{ href: "/erp", label: "All sign-in options" }}>
-      <div className="mx-auto max-w-md rounded-brand border border-line bg-white p-6 shadow-sm sm:p-8">
-        <span className="inline-flex size-12 items-center justify-center rounded-brand bg-brand-soft text-brand">
+      <div className="mx-auto max-w-md rounded-2xl border border-line border-t-4 border-t-brand bg-white p-6 shadow-lg sm:p-8">
+        <span className="inline-flex size-14 items-center justify-center rounded-full bg-brand text-brand-contrast shadow-md">
           <Icon className="size-6" aria-hidden />
         </span>
-        <h1 className="mt-4 font-display text-2xl font-semibold text-ink">{title}</h1>
+        <h1 className="mt-4 font-display text-2xl font-extrabold text-ink">{title}</h1>
         <p className="mt-1 text-sm text-muted">{description}</p>
         {note && <p className="mt-3 text-xs text-muted">{note}</p>}
         <div className="mt-6">

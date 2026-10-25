@@ -1,10 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Sunrise Valley Public School crest">
-  <path d="M32 3 56 12v18c0 15-10 26-24 31C18 56 8 45 8 30V12z" fill="#1f4e79"/>
-  <path d="M32 7 52 14.5V30c0 12.6-8.2 22-20 26.6C20.2 52 12 42.6 12 30V14.5z" fill="none" stroke="#f3d9b5" stroke-width="1.5"/>
-  <circle cx="32" cy="33" r="8" fill="#c8761d"/>
-  <g stroke="#c8761d" stroke-width="2.2" stroke-linecap="round">
+  <path d="M32 3 56 12v18c0 15-10 26-24 31C18 56 8 45 8 30V12z" fill="#c01818"/>
+  <path d="M32 7 52 14.5V30c0 12.6-8.2 22-20 26.6C20.2 52 12 42.6 12 30V14.5z" fill="none" stroke="#ffd9d9" stroke-width="1.5"/>
+  <circle cx="32" cy="33" r="8" fill="#ffb81c"/>
+  <g stroke="#ffb81c" stroke-width="2.2" stroke-linecap="round">
     <path d="M32 19v4"/><path d="M21 24l3 2.6"/><path d="M43 24l-3 2.6"/><path d="M17 33h4"/><path d="M43 33h4"/>
   </g>
   <path d="M14 38c6-3 11-3 18 1s12 4 18 1v4c-6 3-11 3-18-1s-12-4-18-1z" fill="#ffffff"/>
-  <path d="M16 45c5-2.4 10-2.4 16 .8s11 3.2 16 .8" fill="none" stroke="#f3d9b5" stroke-width="2" stroke-linecap="round"/>
+  <path d="M16 45c5-2.4 10-2.4 16 .8s11 3.2 16 .8" fill="none" stroke="#ffd9d9" stroke-width="2" stroke-linecap="round"/>
 </svg>

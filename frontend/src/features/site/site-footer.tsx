@@ -5,15 +5,15 @@ import { siteNav } from "./nav";
 
 export function SiteFooter() {
   return (
-    <footer className="mt-20 bg-brand-strong text-white/90">
-      <div className="mx-auto grid max-w-7xl gap-10 px-4 py-12 sm:px-6 md:grid-cols-3">
+    <footer className="mt-20 border-t-4 border-brand bg-night text-white/90">
+      <div className="mx-auto grid max-w-7xl gap-10 px-4 py-14 sm:px-6 md:grid-cols-3">
         <div>
-          <p className="font-display text-lg font-semibold text-white">{school.name}</p>
+          <p className="font-display text-xl font-extrabold text-white">{school.name}</p>
           <p className="mt-2 text-sm text-white/75">{school.affiliation}</p>
           <p className="mt-1 text-sm text-white/75">Established {school.established}</p>
         </div>
         <div>
-          <p className="text-sm font-semibold text-white">Explore</p>
+          <p className="text-sm font-bold uppercase tracking-wider text-brand-light">Explore</p>
           <ul className="mt-3 grid grid-cols-2 gap-2 text-sm">
             {siteNav.map((n) => (
               <li key={n.href}>
@@ -30,7 +30,7 @@ export function SiteFooter() {
           </ul>
         </div>
         <address className="space-y-2 text-sm not-italic">
-          <p className="font-semibold text-white">Contact</p>
+          <p className="text-sm font-bold uppercase tracking-wider text-brand-light">Contact</p>
           <p className="flex gap-2">
             <MapPin className="mt-0.5 size-4 shrink-0" aria-hidden />
             <span>{school.contact.addressLines.join(", ")}</span>

@@ -17,6 +17,9 @@
   --color-brand-contrast: var(--brand-contrast);
   --color-brand-soft: color-mix(in oklab, var(--brand) 9%, white);
   --color-brand-strong: color-mix(in oklab, var(--brand) 82%, black);
+  --color-brand-light: color-mix(in oklab, var(--brand) 45%, white);
+  --color-night: color-mix(in oklab, var(--accent) 80%, black);
+  --color-night-soft: color-mix(in oklab, var(--accent) 88%, white);
   --color-accent: var(--accent);
   --color-accent-soft: color-mix(in oklab, var(--accent) 12%, white);
   --color-accent-strong: color-mix(in oklab, var(--accent) 75%, black);
@@ -26,11 +29,16 @@
   --color-line: var(--line);
   --radius-brand: var(--radius);
   --font-sans: var(--font-body), ui-sans-serif, system-ui, sans-serif;
-  --font-display: var(--font-heading), ui-serif, Georgia, serif;
+  --font-display: var(--font-body), ui-sans-serif, system-ui, sans-serif;
 }
 
 html {
   scroll-behavior: smooth;
+}
+
+/* Headings are a heavy, tight sans (the font-display utility), not a serif. */
+.font-display {
+  letter-spacing: -0.02em;
 }
 
 body {

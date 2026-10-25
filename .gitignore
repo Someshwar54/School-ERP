@@ -18,3 +18,4 @@ frontend/playwright-report/
 frontend/next-env.d.ts
 frontend/*.tmp.mjs
 frontend/tsconfig.tsbuildinfo
+demo-screenshots/

@@ -2,19 +2,21 @@ import Link from "next/link";
 import type { ButtonHTMLAttributes, ComponentProps, ReactNode } from "react";
 import { cn } from "@/lib/cn";
 
-type Variant = "primary" | "secondary" | "ghost" | "danger" | "accent";
+type Variant = "primary" | "secondary" | "ghost" | "danger" | "accent" | "inverse" | "outline-inverse";
 type Size = "sm" | "md" | "lg";
 
 const base =
-  "inline-flex items-center justify-center gap-2 rounded-brand font-medium transition-colors disabled:cursor-not-allowed disabled:opacity-60 whitespace-nowrap";
+  "inline-flex items-center justify-center gap-2 rounded-full font-semibold transition-all disabled:cursor-not-allowed disabled:opacity-60 whitespace-nowrap";
 const variants: Record<Variant, string> = {
-  primary: "bg-brand text-brand-contrast hover:bg-brand-strong",
-  accent: "bg-accent text-white hover:bg-accent-strong",
-  secondary: "border border-line bg-white text-ink hover:bg-surface",
+  primary: "bg-brand text-brand-contrast shadow-sm hover:bg-brand-strong hover:shadow-md",
+  accent: "bg-brand text-brand-contrast shadow-sm hover:bg-brand-strong hover:shadow-md",
+  secondary: "border-2 border-ink bg-white text-ink hover:bg-ink hover:text-white",
+  inverse: "bg-white text-brand shadow-sm hover:bg-brand-soft",
+  "outline-inverse": "border-2 border-white/70 text-white hover:bg-white hover:text-ink",
   ghost: "text-brand hover:bg-brand-soft",
   danger: "bg-red-700 text-white hover:bg-red-800",
 };
-const sizes: Record<Size, string> = { sm: "h-8 px-3 text-sm", md: "h-10 px-4 text-sm", lg: "h-12 px-6 text-base" };
+const sizes: Record<Size, string> = { sm: "h-8 px-4 text-sm", md: "h-10 px-5 text-sm", lg: "h-12 px-8 text-base" };
 
 export function buttonClasses(variant: Variant = "primary", size: Size = "md", className?: string): string {
   return cn(base, variants[variant], sizes[size], className);

@@ -64,7 +64,7 @@ export function WorkspaceShell({ kind, children }: { kind: WorkspaceKind; childr
   const nav = me && me.workspace.kind === kind ? navFor(kind, me.workspace.modules) : [];
   const isActive = (href: string) => (href === nav[0]?.href ? pathname === href : pathname.startsWith(href));
   const sidebar = (
-    <nav aria-label="Workspace" className="space-y-0.5 p-3">
+    <nav aria-label="Workspace" className="space-y-1 p-3">
       {!me && <Spinner label="Loading menu…" />}
       {nav.map((item) => (
         <Link
@@ -72,8 +72,8 @@ export function WorkspaceShell({ kind, children }: { kind: WorkspaceKind; childr
           href={item.href}
           aria-current={isActive(item.href) ? "page" : undefined}
           className={cn(
-            "flex items-center gap-2.5 rounded-brand px-3 py-2 text-sm transition-colors",
-            isActive(item.href) ? "bg-brand text-brand-contrast" : "text-ink hover:bg-surface",
+            "flex items-center gap-2.5 rounded-full px-4 py-2 text-sm font-medium transition-colors",
+            isActive(item.href) ? "bg-brand text-brand-contrast shadow-sm" : "text-white/80 hover:bg-white/10 hover:text-white",
           )}
         >
           <item.icon className="size-4 shrink-0" aria-hidden />
@@ -85,7 +85,7 @@ export function WorkspaceShell({ kind, children }: { kind: WorkspaceKind; childr
 
   return (
     <div className="min-h-screen bg-surface">
-      <header className="no-print sticky top-0 z-30 flex h-14 items-center gap-3 border-b border-line bg-white px-3 sm:px-5">
+      <header className="no-print sticky top-0 z-30 flex h-14 items-center gap-3 border-b-2 border-brand bg-white px-3 sm:px-5">
         <button
           type="button"
           className="rounded-brand p-2 hover:bg-surface lg:hidden"
@@ -97,7 +97,7 @@ export function WorkspaceShell({ kind, children }: { kind: WorkspaceKind; childr
         </button>
         <Link href={me?.workspace.home ?? "/erp"} className="flex min-w-0 items-center gap-2">
           <Image src={school.logo.src} alt="" width={28} height={28} className="size-7 shrink-0" />
-          <span className="truncate text-sm font-semibold text-brand">{school.shortName}</span>
+          <span className="truncate text-sm font-extrabold text-ink">{school.shortName}</span>
           <span className="hidden text-sm text-muted sm:inline">· {TITLES[kind]}</span>
         </Link>
         <div className="ml-auto flex items-center gap-3">
@@ -115,7 +115,7 @@ export function WorkspaceShell({ kind, children }: { kind: WorkspaceKind; childr
           <button
             type="button"
             onClick={() => void signOut()}
-            className="inline-flex items-center gap-1.5 rounded-brand border border-line px-3 py-1.5 text-sm hover:bg-surface"
+            className="inline-flex items-center gap-1.5 rounded-full border-2 border-ink px-4 py-1 text-sm font-semibold hover:bg-ink hover:text-white"
           >
             <LogOut className="size-4" aria-hidden /> Sign out
           </button>
@@ -123,13 +123,13 @@ export function WorkspaceShell({ kind, children }: { kind: WorkspaceKind; childr
       </header>
 
       <div className="flex">
-        <aside className="no-print sticky top-14 hidden h-[calc(100vh-3.5rem)] w-64 shrink-0 overflow-y-auto border-r border-line bg-white lg:block">
+        <aside className="no-print sticky top-14 hidden h-[calc(100vh-3.5rem)] w-64 shrink-0 overflow-y-auto bg-night lg:block">
           {sidebar}
         </aside>
         {open && (
           <div className="fixed inset-0 top-14 z-20 lg:hidden">
             <div className="absolute inset-0 bg-black/30" onClick={() => setOpenOn(null)} aria-hidden />
-            <aside className="relative h-full w-72 max-w-[85vw] overflow-y-auto border-r border-line bg-white">{sidebar}</aside>
+            <aside className="relative h-full w-72 max-w-[85vw] overflow-y-auto bg-night">{sidebar}</aside>
           </div>
         )}
         <main id="main" className="min-w-0 flex-1 p-4 sm:p-6 lg:p-8">
